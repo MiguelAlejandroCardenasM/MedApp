@@ -1,16 +1,16 @@
 import React from 'react';
 import Modal from 'react-modal';
 
-const OptionModal = (props) => (
+const CModal = (props) => (
   <Modal
-    isOpen = {!!props.selectedOption}
+    isOpen = {!!props.prize}
     style={customStyles}
-    contentLabel = "Selected Option"
+    contentLabel = "Puntuacion de Examen"
     ariaHideApp={false}
   >
       <h3>Selected Option</h3>
-      {props.selectedOption && <p> {props.selectedOption} </p>}
-      <button onClick = {props.clearModal} > Cancel </button>
+      {props.prize && <p> Tu puntuacion es {props.ga} </p>}
+      <button className='button-modal' onClick = {props.clearModal} >Exit</button>
     </Modal>
 );
 
@@ -34,4 +34,4 @@ const customStyles = {
   }
 };
 
-export default OptionModal;
+export default CModal;

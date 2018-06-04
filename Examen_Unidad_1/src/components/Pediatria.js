@@ -1,8 +1,11 @@
 import React from 'react';
 import ProgressBar from './ProgressB';
+import CModal from'./Modal';
 
 export default class CuestionarioP extends React.Component{
   state={
+    prize:true,
+    prizes:[,],
     ocultar:true,
     inicio:false,
     pregunta:'Comenzar',
@@ -21,6 +24,9 @@ export default class CuestionarioP extends React.Component{
     this.setState({inicio:!start});
     this.setState({ocultar:!oc})
     this.pediatria();
+  }
+  handleClearPrize = () => {
+    this.setState(() => ({prize: undefined}));
   }
   //cambia el estado (nombre de la pregunta)
   pediatria=()=>{
@@ -113,8 +119,16 @@ export default class CuestionarioP extends React.Component{
       const end= this.state.inicio;
       this.setState(()=>({pregunta:'El Cuestionario ha concluido'}));
       this.setState({inicio:!end});
+      this.activarModal(contador);
     }
 
+  }
+  activarModal=(contador)=>{
+    if(contador>=9){
+      const Mm=this.state.mm;
+      this.setState({mm:!Mm});
+
+    }
   }
   maspb=()=>{
     var elem = document.getElementById("myBar");
@@ -155,7 +169,12 @@ export default class CuestionarioP extends React.Component{
       <div>
       <ProgressBar/>
       <h1>{this.state.pregunta}</h1>
-      <h2>{this.state.progreso} </h2>
+      {this.state.mm &&(<div>
+        <CModal ga={this.state.ga} prize={this.state.prize} clearModal={this.handleClearPrize}
+        />
+        </div>
+       )
+      }
       {this.state.ocultar&&(<button onClick={this.iniciar}>Begin</button>)}
         {this.state.inicio &&(<div>
           <h2>Respuestas Correctas:{this.state.ga}/10</h2>

@@ -1,23 +1,23 @@
 .container {
-    position: relative;
+    position: relative;//hace que la posicion del contenedor sea variable
 }
 
 .topleft {
-    position: absolute;
-    width: 50%;
-    top: 12rem;
-    left: 30rem;
-    font-size: $m-size;
-    background-color: white;
-    opacity: .9;
-    border-width:1rem;
-    border-style: dotted;
-    border-color: $purple;
+    position: absolute;//hace que la posicion del contenedor sea inamovible
+    width: 50%;//anchura del contenedor
+    top: 12rem;//separacion vertical superior del contenedor
+    left: 30rem;//separacion horizontal
+    font-size: $m-size;//tamaño de letra //$para tamaños de letra revisar _settings
+    background-color: white;//color de fondo del contenedor
+    opacity: .9;//trasparencia que se aplica al contenedor
+    border-width:1rem;//anchura del borde
+    border-style: dotted;//pone el estilo del borde en puntos
+    border-color: $purple;//color del borde //para ver el color del borde vaya a _settings
 
     h1{
-      font-size: $l-size;
-      color: $blue;
-      margin-left: 3rem;
+      font-size: $l-size;//tamaño de letra
+      color: $blue;//color de letra
+      margin-left: 3rem;//recorre la etiqueta a la derecha
     }
     h2{
       font-style: oblique;

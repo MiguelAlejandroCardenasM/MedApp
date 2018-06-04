@@ -1,8 +1,12 @@
 import React from 'react';
 import ProgressBar from './ProgressB';
+import CModal from'./Modal';
+import gif from '../styles/components/killua.gif';
 
 export default class CuestionarioA extends React.Component{
   state={
+    prize:true,
+    prizes:[,],
     ocultar:true,
     inicio:false,
     pregunta:'Comenzar',
@@ -10,9 +14,10 @@ export default class CuestionarioA extends React.Component{
     opcionesp:[,],
     compararr:'',
     nump:0,
-    ga:0,
-    ba:0,
-    progreso:0
+    ga:0,//good answer
+    ba:0,//bad answer
+    progreso:0,
+    mm:false
   };
   //Muestra el inicio del Cuestionario
   iniciar=()=>{
@@ -92,7 +97,6 @@ export default class CuestionarioA extends React.Component{
       this.setState({nump:contador+1});
       this.maspb();
     }
-
     else if(contador==8){
       this.setState(()=>({pregunta:'los músculos de la mímica de la alegría son excepto'}));
       this.setState(()=>({respuesta:'d'}));
@@ -111,10 +115,10 @@ export default class CuestionarioA extends React.Component{
     }
     else if(contador>=9){
       const end= this.state.inicio;
-      this.setState(()=>({pregunta:'fin'}));
+      this.setState(()=>({pregunta:'Cuestionario Terminado'}));
       this.setState({inicio:!end});
+      this.activarModal(contador);
     }
-
   }
   maspb=()=>{
     var elem = document.getElementById("myBar");
@@ -146,6 +150,16 @@ export default class CuestionarioA extends React.Component{
     }
    }
    //Permite el cambio de value en el input
+  activarModal=(contador)=>{
+    if(contador>=9){
+      const Mm=this.state.mm;
+      this.setState({mm:!Mm});
+
+    }
+  }
+  handleClearPrize = () => {
+    this.setState(() => ({prize: undefined}));
+  }
   cambiarR=(e)=>{
     this.setState({compararr:e.target.value})
   }
@@ -155,15 +169,21 @@ export default class CuestionarioA extends React.Component{
       <div>
       <ProgressBar/>
       <h1>{this.state.pregunta}</h1>
-      <h2>{this.state.progreso} </h2>
-      {this.state.ocultar&&(<button onClick={this.iniciar}>Begin</button>)}
+      {this.state.mm &&(<div>
+        <CModal ga={this.state.ga} prize={this.state.prize} clearModal={this.handleClearPrize}
+        />
+        </div>
+       )
+      }
+      {this.state.ocultar&&(<button className='button--link' onClick={this.iniciar}>Begin</button>)}
         {this.state.inicio &&(<div>
           <h2>Respuestas Correctas:{this.state.ga}/10</h2>
           <p>{this.state.opcionesp.map((opcionesp) => <li key={opcionesp}>{opcionesp}</li>
         )}</p>
+
         <form onSubmit = {this.correcto}>
               <input type = "text" name = "answer" placeholder="Enter your answer" value={this.state.compararr} onChange={this.cambiarR}/>
-              <input type="submit" value="Submit"/>
+              <input  className='submit' type="submit" value="Submit"/>
         </form>
         </div>
     )}

@@ -65,6 +65,17 @@ body {
   font-weight: 500;
   padding: $s-size;
 }
+.button-modal{
+  width: 12rem;
+  background: $purple;
+  border: none;
+  margin-left: 1rem;
+  border-buttom: .3rem solid darken($purple, 10%);
+  font-weight: 500;
+  opacity: 0.5;
+  color:black;
+  padding: $s-size;
+}
 
 .button--link{
   background: none;
