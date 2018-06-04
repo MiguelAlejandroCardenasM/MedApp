@@ -1,7 +1,6 @@
 import React from 'react';
 import ProgressBar from './ProgressB';
 import CModal from'./Modal';
-import gif from '../styles/components/killua.gif';
 
 export default class CuestionarioA extends React.Component{
   state={
@@ -120,6 +119,7 @@ export default class CuestionarioA extends React.Component{
       this.activarModal(contador);
     }
   }
+  //Incrementa el progreso de la barra de progreso
   maspb=()=>{
     var elem = document.getElementById("myBar");
     var width=this.state.progreso;
@@ -150,16 +150,19 @@ export default class CuestionarioA extends React.Component{
     }
    }
    //Permite el cambio de value en el input
+  //Activa modal cambiando el estado mm
   activarModal=(contador)=>{
     if(contador>=9){
       const Mm=this.state.mm;
       this.setState({mm:!Mm});
-
+      }
     }
-  }
+  //cambia el estado de Modal
   handleClearPrize = () => {
     this.setState(() => ({prize: undefined}));
+    this.setState({showan:false});
   }
+  //permite cambiar la respuesta en el input
   cambiarR=(e)=>{
     this.setState({compararr:e.target.value})
   }
@@ -175,7 +178,7 @@ export default class CuestionarioA extends React.Component{
         </div>
        )
       }
-      {this.state.ocultar&&(<button className='button--link' onClick={this.iniciar}>Begin</button>)}
+      {this.state.ocultar&&(<button className='button-modal'  style={{marginLeft: "40%"}} onClick={this.iniciar}>Begin</button>)}
         {this.state.inicio &&(<div>
           <h2>Respuestas Correctas:{this.state.ga}/10</h2>
           <p>{this.state.opcionesp.map((opcionesp) => <li key={opcionesp}>{opcionesp}</li>

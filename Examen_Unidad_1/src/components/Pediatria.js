@@ -1,7 +1,7 @@
 import React from 'react';
 import ProgressBar from './ProgressB';
 import CModal from'./Modal';
-
+//no abrir
 export default class CuestionarioP extends React.Component{
   state={
     prize:true,
@@ -98,7 +98,6 @@ export default class CuestionarioP extends React.Component{
       this.setState({nump:contador+1});
       this.maspb();
     }
-
     else if(contador==8){
       this.setState(()=>({pregunta:'los músculos de la mímica de la alegría son excepto'}));
       this.setState(()=>({respuesta:'d'}));
@@ -175,7 +174,7 @@ export default class CuestionarioP extends React.Component{
         </div>
        )
       }
-      {this.state.ocultar&&(<button onClick={this.iniciar}>Begin</button>)}
+      {this.state.ocultar&&(<button className='button-modal' style={{marginLeft:'33%'}} onClick={this.iniciar}>Begin</button>)}
         {this.state.inicio &&(<div>
           <h2>Respuestas Correctas:{this.state.ga}/10</h2>
           <p>{this.state.opcionesp.map((opcionesp) => <li key={opcionesp}>{opcionesp}</li>

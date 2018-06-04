@@ -8,12 +8,12 @@ const CModal = (props) => (
     contentLabel = "Puntuacion de Examen"
     ariaHideApp={false}
   >
-      <h3>Selected Option</h3>
+      <h3>Puntuacion de Examen</h3>
       {props.prize && <p> Tu puntuacion es {props.ga} </p>}
       <button className='button-modal' onClick = {props.clearModal} >Exit</button>
     </Modal>
 );
-
+//lo hizo usted :v
 const customStyles = {
   overlay: {
       position: 'fixed',

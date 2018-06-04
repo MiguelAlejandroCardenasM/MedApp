@@ -17,16 +17,16 @@ export default class Cuestionarios extends React.Component{
     if(this.state.showpe==false){
       const Sa= this.state.showan;
       this.setState({showan:!Sa});
+      }
     }
-
-  }
   //Misma funcion que la de mostrarAnatomia
   mostrarPediatria=()=>{
     if(this.state.showan==false){
     const  Sp=this.state.showpe;
     this.setState({showpe:!Sp});
+    }
   }
-}
+  //renderiza la app
   render(){
     const title="MedApp";
     const subtitle="Cuestionarios"
@@ -36,16 +36,17 @@ export default class Cuestionarios extends React.Component{
           <h1>Cuestionarios</h1>
           <button className="button" onClick={this.mostrarAnatomia}>Anatomia</button><br/>
           <button className="button" onClick={this.mostrarPediatria}>Pediatria</button><br/>
-          </div>
-          <div className="container">
+        </div>
+        <div className="container">
           <Header title={title} subtitle={subtitle}/>
           <img src={img} className="img"/>
           <div className="topleft">
-          <h1> Cuestionario de MedApp</h1>
-          {this.state.showan &&(<div> <CuestionarioA/></div>)}
-          {this.state.showpe && (<div><CuestionarioP/> </div>)}
+            <h1> Cuestionario de MedApp</h1>
+            {this.state.showan &&(<div> <CuestionarioA/></div>)}
+            {this.state.showpe && (<div><CuestionarioP/> </div>)}
           </div>
-          </div>
+        </div>
       </div>
-    ); }
+    );
+  }
 }
