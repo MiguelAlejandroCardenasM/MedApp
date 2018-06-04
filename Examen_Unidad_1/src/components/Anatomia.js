@@ -1,7 +1,7 @@
 import React from 'react';
 import ProgressBar from './ProgressB';
 
-export default class Cuestionario extends React.Component{
+export default class CuestionarioA extends React.Component{
   state={
     ocultar:true,
     inicio:false,
@@ -28,82 +28,83 @@ export default class Cuestionario extends React.Component{
     const conp=this.state.progreso;
     if(contador==0){
       this.setState(()=>({pregunta:'El arco cigomático está conformado por la articulación de:'}));
-      this.setState(()=>({respuesta:'Elsa'}));
-      this.setState(()=>({opcionesp:['a) Hueso Vómer y temporal','Hans','Christhoper','Michelle']}));
+      this.setState(()=>({respuesta:'c'}));
+      this.setState(()=>({opcionesp:['a) Hueso Vómer y temporal','b) Apófisis ascendente del maxilar superior con apófisis cigomática del frontal','c) Hueso malar y temporal','d) Hueso cigomático con el peñasco del hueso temporal','e) Apófisis cigomatico del hueso malar y proceso cigomático del frontal']}));
       this.maspb();
       this.setState({progreso:conp+10});
       this.setState({nump:contador+1});
 
     }
     else if(contador==1){
-      this.setState(()=>({pregunta:'¿Quien le pega al Chavo?'}));
-      this.setState(()=>({respuesta:'Quico'}));
-      this.setState(()=>({opcionesp:['Quico','Chilindrina','Don Ramon','Profesor Jirafales']}));
+      this.setState(()=>({pregunta:'el tecmen timpani forma parte del'}));
+      this.setState(()=>({respuesta:'c'}));
+      this.setState(()=>({opcionesp:['a) Proceso mastoideo del hueso temporal','b) Escama del hueso temporal','c) Parte del peñasco del hueso temporal','d) Ninguno','e) todos']}));
       this.setState({progreso:conp+10});
       this.setState({nump:contador+1});
       this.maspb();
     }
     else if(contador==2){
-      this.setState(()=>({pregunta:'¿Quien hizo llorar al cerdito George?'}));
-      this.setState(()=>({respuesta:'Peppa'}));
-      this.setState(()=>({opcionesp:['Mama Cerdita','Papa Cerdito','Peppa']}));
+      this.setState(()=>({pregunta:'¿Respecto al pico del esfenoides todos son ciertos EXCEPTO?'}));
+      this.setState(()=>({respuesta:'e'}));
+      this.setState(()=>({opcionesp:['a) Es el extremo anterior de la cresta esfenoidal inferior','b) Se encuentra en la cara inferior del cuerpo del esfenoides','c) Se continúa con la cresta esfenoidal','d) A y C son correctos ','e) todos son correctos']}));
       this.setState({progreso:conp+10});
       this.setState({nump:contador+1});
       this.maspb();
     }
     else if(contador==3){
-      this.setState(()=>({pregunta:'¿Quien era el mejor amigo del perrito Toby?'}));
-      this.setState(()=>({respuesta:'Sabueso'}));
-      this.setState(()=>({opcionesp:['La señora Vaca','Sabueso','Señora Buho','Michelle']}));
+      this.setState(()=>({pregunta:' las siguientes estructuras atraviesan la fisura orbitario'}));
+      this.setState(()=>({respuesta:'e'}));
+      this.setState(()=>({opcionesp:['a) Nervio oculomotor','b) Nervio abducens','c) Nervio troclear','d) Solamente pasan A y C','e) Todos son verdaderos']}));
       this.setState({progreso:conp+10});
       this.setState({nump:contador+1});
       this.maspb();
 
     }
     else if(contador==4){
-      this.setState(()=>({pregunta:'¿Quien se comio una manzana envenenada?'}));
-      this.setState(()=>({respuesta:'Blanca Nieves'}));
-      this.setState(()=>({opcionesp:['Cenicienta','Rapunzel','Blanca Nieves','Michelle']}));
+      this.setState(()=>({pregunta:'El las apófisis geny se insertan los siguientes músculos'}));
+      this.setState(()=>({respuesta:'c'}));
+      this.setState(()=>({opcionesp:['a) Genipalatino y geniogloso','b) Geniogloso y genitiroideo','c) Genihiodeo y geniogloso','d) Genihioideo y milohioideo','e) Geniogloso y digastrico']}));
       this.setState({progreso:conp+10});
       this.setState({nump:contador+1});
       this.maspb();
     }
     else if(contador==5){
-      this.setState(()=>({pregunta:'¿Quien es una doctora muy buena y atiende a sus juguetes?'}));
-      this.setState(()=>({respuesta:'La doctora juguetes'}));
-      this.setState(()=>({opcionesp:['La doctora juguetes','La doctora sandra','La abuela','Michelle']}));
+      this.setState(()=>({pregunta:'Son características del musculo prócer los siguientes excepto'}));
+      this.setState(()=>({respuesta:'c'}));
+      this.setState(()=>({opcionesp:['a) Llamado musculo piramidal de la nariz','b) Una de sus inserciones termina en la cara profunda de la piel','c) Es antagonista de la porción medial del musculo superciliar','d) Tracciona inferiormente la piel del espacio interciliar','e) Esta inervado por el nervio facial']}));
       this.setState({progreso:conp+10});
       this.setState({nump:contador+1});
       this.maspb();
     }
     else if(contador==6){
-      this.setState(()=>({pregunta:'¿Cual es la comida favorita de Garfield?'}));
-      this.setState(()=>({respuesta:'Lasaña'}));
-      this.setState(()=>({opcionesp:['Lasaña','Pizza','Albondigas','Tacos de Pescado']}));
+      this.setState(()=>({pregunta:'Sobre el musculo canino uno es incorrectos'}));
+      this.setState(()=>({respuesta:'a'}));
+      this.setState(()=>({opcionesp:['a) Eleva la comisura y el labio superior','b) Se inserta en la fosa canina','c) Esta inervado por el nervio facial','d) Es elevador del Angulo de la boca','e) Forma parte de los musculos de la boca']}));
       this.setState({progreso:conp+10});
       this.setState({nump:contador+1});
       this.maspb();
     }
     else if(contador==7){
-      this.setState(()=>({pregunta:'¿Es una gatita muy bonita?'}));
-      this.setState(()=>({respuesta:'Hello Kitty'}));
-      this.setState(()=>({opcionesp:['El gato con botas','La gatita alegre','Hello Kitty']}));
+      this.setState(()=>({pregunta:'uno de los siguientes no es parte del hueso occipital'}));
+      this.setState(()=>({respuesta:'d'}));
+      this.setState(()=>({opcionesp:['a) Cresta occipital externa','b) Línea nucal inferior ','c) Apófisis yugular','d) Eminencia arqueada','e) Cresta sinostosica ']}));
       this.setState({progreso:conp+10});
       this.setState({nump:contador+1});
       this.maspb();
     }
+
     else if(contador==8){
-      this.setState(()=>({pregunta:'Es una vaquera que ayuda a sus amigos'}));
-      this.setState(()=>({respuesta:'Sheriff Callie'}));
-      this.setState(()=>({opcionesp:['La guardiana de la galaxia','Sheriff Woody','Una vaquera','Michelle']}));
+      this.setState(()=>({pregunta:'los músculos de la mímica de la alegría son excepto'}));
+      this.setState(()=>({respuesta:'d'}));
+      this.setState(()=>({opcionesp:['a) Musculo Elevador del labio superior','b) Musculo risorio','c) Musculo cigomatico mayor','d) Musculo elevador del angulo de la boca','e) Musculo orbicular de los labios']}));
       this.setState({progreso:conp+10});
       this.setState({nump:contador+1});
       this.maspb();
     }
     else if(contador==9){
-      this.setState(()=>({pregunta:'¿Quien se acaba los Doritos?'}));
-      this.setState(()=>({respuesta:'Todos'}));
-      this.setState(()=>({opcionesp:['Alejandro','Miguel','Myriam','Michelle','Lizeth', 'Todos']}));
+      this.setState(()=>({pregunta:'10.- El musculo largo del cuello se inserta inferiormente en:'}));
+      this.setState(()=>({respuesta:'e'}));
+      this.setState(()=>({opcionesp:['a) Las tres primeras vertebras torácicas','b) Tres últimas vértebras cervicales','c) Tubérculos anteriores de la cuarta, quinta y sexta vertebra cervical ','d) Solo A y B','e) Todas']}));
       this.setState({progreso:conp+10});
       this.setState({nump:contador+1});
       this.maspb();

@@ -1,5 +1,6 @@
 import React from 'react';
-import Cuestionario from './Anatomia';
+import CuestionarioA from './Anatomia';
+import CuestionarioP from './Pediatria';
 import img from '../styles/components/fondo.png';
 import Header from './Header';
 export default class Cuestionarios extends React.Component{
@@ -8,12 +9,19 @@ export default class Cuestionarios extends React.Component{
     showpe:false
   };
   mostrarAnatomia=()=>{
-    const Sa= this.state.showan;
-    this.setState({showan:!Sa});
-  }
-  mostrarPediatria=()=>{
+    if(this.state.showpe==false){
+      const Sa= this.state.showan;
+      this.setState({showan:!Sa});
+    }
 
   }
+
+  mostrarPediatria=()=>{
+    if(this.state.showan==false){
+    const  Sp=this.state.showpe;
+    this.setState({showpe:!Sp});
+  }
+}
   render(){
     const title="MedApp";
     const subtitle="Cuestionarios"
@@ -28,8 +36,9 @@ export default class Cuestionarios extends React.Component{
           <Header/>
           <img src={img} className="img"/>
           <div className="topleft">
-          <h1> hola</h1>
-          {this.state.showan &&(<div> <Cuestionario/></div>)}
+          <h1> Cuestionario de MedApp</h1>
+          {this.state.showan &&(<div> <CuestionarioA/></div>)}
+          {this.state.showpe && (<div><CuestionarioP/> </div>)}
           </div>
           </div>
       </div>
