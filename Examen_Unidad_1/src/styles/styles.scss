@@ -4,8 +4,10 @@
 @import './components/_header.scss';
 @import './components/_container.scss';
 @import './components/_nombre.scss';
+@import './components/_Cuestionario.scss';
+@import './components/_ProgressBar.scss';
 
-$brand-color: $dark-blue;
+$brand-color: $dark-grey;
 *{
   color: $brand-color;
 }

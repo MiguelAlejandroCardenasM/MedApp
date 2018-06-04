@@ -1,6 +1,6 @@
 .header{
-  background: #20222b;
-  color: black;
+  position: absolute;
+  background: #003d5b;
   margin-buttom: $xl-size;
   padding: $m-size 0;
 }
@@ -11,7 +11,7 @@
 }
 
 .header__subtitle{
-  color: #a5afd7;
+  background-color: #00334c;
   font-size: $m-size;
   font-weight: 500;
   margin: 0;

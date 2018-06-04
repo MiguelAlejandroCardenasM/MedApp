@@ -38,7 +38,6 @@ export default class IndecisionApp extends React.Component{
     }
     console.log("componentDidMount");
   }
-
   componentDidUpdate(prevProps,prevState){
     console.log('componen Did Update');
     if(prevState.options.length !== this.state.options.length){
@@ -47,7 +46,6 @@ export default class IndecisionApp extends React.Component{
       console.log("Saving data");
     }
   }
-
   componentWillUnmount(){
     console.log('component Will Unmount');
   }

@@ -1,14 +1,39 @@
-.container{
-  max-width: 60rem;
-  margin: 0;
-  padding: 0 auto;
-  border-style: double;
-  border-color: $purple;
-  position: fixed;
+.container {
+    position: relative;
 }
-.h1{
-  padding: 1rem;
-  font-size: $xl-size;
-  font-style: italic;
-  margin-left: 5rem;
+
+.topleft {
+    position: absolute;
+    width: 60rem;
+    top: 12rem;
+    left: 30rem;
+    font-size: $m-size;
+    background-color: white;
+    opacity: .9;
+    border-width:1rem;
+    border-style: dotted;
+    border-color: $purple;
+
+    h1{
+      font-size: $l-size;
+      color: $blue;
+      margin-left: 3rem;
+    }
+    h2{
+      font-style: oblique;
+      color: $off-white;
+      margin-left: 3rem;
+    }
+    li{
+      font-style: italic;
+      color: $purple;
+      margin-left: 3rem;
+    }
+
+}
+
+.img {
+    width: 100%;
+    height: auto;
+    opacity: 0.3;
 }

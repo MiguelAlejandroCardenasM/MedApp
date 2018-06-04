@@ -3,8 +3,7 @@ import React from 'react';
 export default class Datos extends React.Component{
   state={
     name:undefined,
-    score:0,
-    picture:'1'
+    score:0
   };
   componentDidMount1(){
     console.log('component Did Mount');
